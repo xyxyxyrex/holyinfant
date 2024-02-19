@@ -1,0 +1,485 @@
+File uploaded successfully.
+No file uploaded.
+File uploaded successfully.
+File uploaded successfully.
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+No file uploaded.
+string(17) "No file uploaded."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => asdasd
+    [lastname] => asdasdasd
+    [user_role] => bookkeeper
+    [email] => adsasd
+    [address] => asdasasdd
+    [contact_number] => 55151
+    [birthdate] => 2122-11-12
+    [gender] => Female
+    [username] => ggas
+    [password] => 123
+)
+
+string(271) "Array
+(
+    [firstname] => asdasd
+    [lastname] => asdasdasd
+    [user_role] => bookkeeper
+    [email] => adsasd
+    [address] => asdasasdd
+    [contact_number] => 55151
+    [birthdate] => 2122-11-12
+    [gender] => Female
+    [username] => ggas
+    [password] => 123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Beautiful-pink-3d-heart-premium-clipart-PNG.png
+            [full_path] => Beautiful-pink-3d-heart-premium-clipart-PNG.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\phpD824.tmp
+            [error] => 0
+            [size] => 964500
+        )
+
+)
+
+string(344) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Beautiful-pink-3d-heart-premium-clipart-PNG.png
+            [full_path] => Beautiful-pink-3d-heart-premium-clipart-PNG.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\phpD824.tmp
+            [error] => 0
+            [size] => 964500
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => asd
+    [lastname] => dasasdasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => dasasd
+    [contact_number] => 213
+    [birthdate] => 12312-03-21
+    [gender] => Male
+    [username] => admin
+    [password] => admin123
+)
+
+string(268) "Array
+(
+    [firstname] => asd
+    [lastname] => dasasdasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => dasasd
+    [contact_number] => 213
+    [birthdate] => 12312-03-21
+    [gender] => Male
+    [username] => admin
+    [password] => admin123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpFD0A.tmp
+            [error] => 0
+            [size] => 15873
+        )
+
+)
+
+string(354) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpFD0A.tmp
+            [error] => 0
+            [size] => 15873
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => asd
+    [lastname] => dasasdasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => dasasd
+    [contact_number] => 213
+    [birthdate] => 12312-03-21
+    [gender] => Male
+    [username] => admin
+    [password] => admin123
+)
+
+string(268) "Array
+(
+    [firstname] => asd
+    [lastname] => dasasdasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => dasasd
+    [contact_number] => 213
+    [birthdate] => 12312-03-21
+    [gender] => Male
+    [username] => admin
+    [password] => admin123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => 
+            [tmp_name] => 
+            [error] => 3
+            [size] => 0
+        )
+
+)
+
+string(316) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => 
+            [tmp_name] => 
+            [error] => 3
+            [size] => 0
+        )
+
+)
+"
+
+No file uploaded.
+string(17) "No file uploaded."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => asdasd
+    [lastname] => asdasasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => asd
+    [contact_number] => 123123
+    [birthdate] => 2200-03-12
+    [gender] => Female
+    [username] => asd123
+    [password] => asd123
+)
+
+string(270) "Array
+(
+    [firstname] => asdasd
+    [lastname] => asdasasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => asd
+    [contact_number] => 123123
+    [birthdate] => 2200-03-12
+    [gender] => Female
+    [username] => asd123
+    [password] => asd123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Von Neumann Architecture.png
+            [full_path] => Von Neumann Architecture.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php4C04.tmp
+            [error] => 0
+            [size] => 39256
+        )
+
+)
+
+string(305) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Von Neumann Architecture.png
+            [full_path] => Von Neumann Architecture.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php4C04.tmp
+            [error] => 0
+            [size] => 39256
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => asdasd
+    [lastname] => asdasasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => asd
+    [contact_number] => 123123
+    [birthdate] => 2200-03-12
+    [gender] => Female
+    [username] => asd123
+    [password] => asd123
+)
+
+string(270) "Array
+(
+    [firstname] => asdasd
+    [lastname] => asdasasd
+    [user_role] => bookkeeper
+    [email] => asdasd
+    [address] => asd
+    [contact_number] => 123123
+    [birthdate] => 2200-03-12
+    [gender] => Female
+    [username] => asd123
+    [password] => asd123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Von Neumann Architecture.png
+            [full_path] => Von Neumann Architecture.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php4C34.tmp
+            [error] => 0
+            [size] => 39256
+        )
+
+)
+
+string(305) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Von Neumann Architecture.png
+            [full_path] => Von Neumann Architecture.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php4C34.tmp
+            [error] => 0
+            [size] => 39256
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Michael
+    [lastname] => Scott
+    [user_role] => director
+    [email] => michaelscott@gmail.com
+    [address] => Scranton
+    [contact_number] => 09394712731
+    [birthdate] => 1968-11-25
+    [gender] => Male
+    [username] => michaelscott
+    [password] => 123
+)
+
+string(293) "Array
+(
+    [firstname] => Michael
+    [lastname] => Scott
+    [user_role] => director
+    [email] => michaelscott@gmail.com
+    [address] => Scranton
+    [contact_number] => 09394712731
+    [birthdate] => 1968-11-25
+    [gender] => Male
+    [username] => michaelscott
+    [password] => 123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC1F0.tmp
+            [error] => 0
+            [size] => 15873
+        )
+
+)
+
+string(354) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC1F0.tmp
+            [error] => 0
+            [size] => 15873
+        )
+
+)
+"
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Michael
+    [lastname] => Scott
+    [user_role] => director
+    [email] => michaelscott@gmail.com
+    [address] => Scranton
+    [contact_number] => 09394712731
+    [birthdate] => 1968-11-25
+    [gender] => Male
+    [username] => michaelscott
+    [password] => 123
+)
+
+string(293) "Array
+(
+    [firstname] => Michael
+    [lastname] => Scott
+    [user_role] => director
+    [email] => michaelscott@gmail.com
+    [address] => Scranton
+    [contact_number] => 09394712731
+    [birthdate] => 1968-11-25
+    [gender] => Male
+    [username] => michaelscott
+    [password] => 123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC201.tmp
+            [error] => 0
+            [size] => 15873
+        )
+
+)
+
+string(354) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [full_path] => 426106845_1310246366316895_4797682667933915919_n.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC201.tmp
+            [error] => 0
+            [size] => 15873
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+

@@ -12,12 +12,15 @@ CREATE TABLE tbl_director (
     password VARCHAR(255) NOT NULL,
     firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+    gender VARCHAR(10) NOT NULL, -- Added gender column
     email VARCHAR(255) NOT NULL,
     contact_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
     access_level INT DEFAULT 3,
-    profile_picture VARCHAR(255) NOT NULL
-    registered
+    profile_picture VARCHAR(255) NOT NULL,
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    registered BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE tbl_bookkeeper (
@@ -26,11 +29,14 @@ CREATE TABLE tbl_bookkeeper (
     password VARCHAR(255) NOT NULL,
     firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+    gender VARCHAR(10) NOT NULL, -- Added gender column
     email VARCHAR(255) NOT NULL,
     contact_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
     access_level INT DEFAULT 2,
     profile_picture VARCHAR(255) NOT NULL,
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     registered BOOLEAN DEFAULT FALSE
 );
 
@@ -40,11 +46,14 @@ CREATE TABLE tbl_housekeeper (
     password VARCHAR(255) NOT NULL,
     firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+    gender VARCHAR(10) NOT NULL, -- Added gender column
     email VARCHAR(255) NOT NULL,
     contact_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
     access_level INT DEFAULT 1,
     profile_picture VARCHAR(255) NOT NULL,
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     registered BOOLEAN DEFAULT FALSE
 );
 

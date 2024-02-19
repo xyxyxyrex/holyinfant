@@ -24,6 +24,21 @@ body {
   height: 100%;
 }
 
+#create-account_label {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+.reglink {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.404);
+  font-size: 10px;
+}
+.reglink:hover {
+  text-decoration: none;
+  color: rgb(70, 166, 255);
+}
+
 .header {
   width: 100%;
   height: auto;
@@ -74,6 +89,23 @@ input[type="password"]:focus {
   font-family: Inter;
 }
 
+.forgotpass {
+  color: rgba(0, 0, 0, 0.301);
+  text-align: end;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.forgotpass:hover {
+  color: rgb(70, 166, 255);
+  transition: 0.2s;
+}
+.forgotpass {
+  text-decoration: none;
+}
+
 button[type="submit"] {
   font-size: 1rem;
   border-radius: 50px;
@@ -112,4 +144,83 @@ button[type="submit"]:hover {
   height: 100%;
   object-fit: cover;
   transition: transform 1.2s ease-in-out;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  border-radius: 20px;
+  text-align: center;
+  width: 25%;
+  background-color: #fefefee5;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.forgot-button {
+  font-size: 1rem;
+  border-radius: 50px;
+  background: white;
+  font-weight: bold;
+  margin-top: 10%;
+  font-family: Inter;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.forgot-button:hover {
+  background: radial-gradient(
+    circle at center,
+    rgb(239, 249, 249) 0%,
+    rgb(182, 199, 226) 100.2%
+  );
+  font-weight: bold;
+  margin-top: 10%;
+  font-family: Inter;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
