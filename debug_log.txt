@@ -483,3 +483,134 @@ string(27) "File uploaded successfully."
 User registered successfully
 string(28) "User registered successfully"
 
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Firstname
+    [lastname] => Lastname
+    [user_role] => director
+    [email] => emailadd@gmail.com
+    [address] => addressline1
+    [contact_number] => 3241233121
+    [birthdate] => 2222-02-22
+    [gender] => Female
+    [username] => director
+    [password] => 123
+)
+
+string(295) "Array
+(
+    [firstname] => Firstname
+    [lastname] => Lastname
+    [user_role] => director
+    [email] => emailadd@gmail.com
+    [address] => addressline1
+    [contact_number] => 3241233121
+    [birthdate] => 2222-02-22
+    [gender] => Female
+    [username] => director
+    [password] => 123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => TABLE TENNIS.png
+            [full_path] => TABLE TENNIS.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\phpC3F.tmp
+            [error] => 0
+            [size] => 4817604
+        )
+
+)
+
+string(282) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => TABLE TENNIS.png
+            [full_path] => TABLE TENNIS.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\phpC3F.tmp
+            [error] => 0
+            [size] => 4817604
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Firstname
+    [lastname] => Lastname
+    [user_role] => director
+    [email] => emailadd@gmail.com
+    [address] => addressline1
+    [contact_number] => 3241233121
+    [birthdate] => 2222-02-22
+    [gender] => Female
+    [username] => director
+    [password] => 123
+)
+
+string(295) "Array
+(
+    [firstname] => Firstname
+    [lastname] => Lastname
+    [user_role] => director
+    [email] => emailadd@gmail.com
+    [address] => addressline1
+    [contact_number] => 3241233121
+    [birthdate] => 2222-02-22
+    [gender] => Female
+    [username] => director
+    [password] => 123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => TABLE TENNIS.png
+            [full_path] => TABLE TENNIS.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\phpC7E.tmp
+            [error] => 0
+            [size] => 4817604
+        )
+
+)
+
+string(282) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => TABLE TENNIS.png
+            [full_path] => TABLE TENNIS.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\phpC7E.tmp
+            [error] => 0
+            [size] => 4817604
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
