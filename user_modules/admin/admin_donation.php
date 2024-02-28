@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="styles/sidenav.css">
     <link rel="stylesheet" href="dashboard.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -1,3 +1,7 @@
+<?php
+include 'admin_sidebar.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,127 +12,128 @@
 </head>
 
 <body>
-    <?php
-    // Include your database connection file
-    include '../../dbconn.php';
-    include 'admin_sidebar.php';
+    <main>
+        <?php
+        // Include your database connection file
+        include '../../dbconn.php';
 
-    // Start session
-    session_start();
 
-    // Function to get access level description
-    function getAccessLevelDescription($accessLevel)
-    {
-        switch ($accessLevel) {
-            case 1:
-                return 'Housekeeper';
-            case 2:
-                return 'Bookkeeper';
-            case 3:
-                return 'Director';
-            default:
-                return 'Unknown';
+        // Start session
+        session_start();
+
+        // Function to get access level description
+        function getAccessLevelDescription($accessLevel)
+        {
+            switch ($accessLevel) {
+                case 1:
+                    return 'Housekeeper';
+                case 2:
+                    return 'Bookkeeper';
+                case 3:
+                    return 'Director';
+                default:
+                    return 'Unknown';
+            }
         }
-    }
 
-    // Check if the form is submitted
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Check if the accept button is clicked
-        if (isset($_POST['accept_user'])) {
-            $userId = $_POST['user_id'];
-            $accessLevel = $_POST['access_level'];
+        // Check if the form is submitted
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Check if the accept button is clicked
+            if (isset($_POST['accept_user'])) {
+                $userId = $_POST['user_id'];
+                $accessLevel = $_POST['access_level'];
 
-            $tableName = '';
-            $validAccessLevels = [1, 2, 3];
+                $tableName = '';
+                $validAccessLevels = [1, 2, 3];
 
-            // Validate access level
-            if (in_array($accessLevel, $validAccessLevels)) {
-                switch ($accessLevel) {
-                    case 1:
-                        $tableName = 'tbl_housekeeper';
-                        break;
-                    case 2:
-                        $tableName = 'tbl_bookkeeper';
-                        break;
-                    case 3:
-                        $tableName = 'tbl_director';
-                        break;
-                }
-
-                $checkQuery = "SELECT registered FROM $tableName WHERE user_id = ?";
-                $stmtCheck = mysqli_prepare($conn, $checkQuery);
-                mysqli_stmt_bind_param($stmtCheck, 'i', $userId);
-                mysqli_stmt_execute($stmtCheck);
-                mysqli_stmt_bind_result($stmtCheck, $registeredStatus);
-                mysqli_stmt_fetch($stmtCheck);
-                mysqli_stmt_close($stmtCheck);
-
-                if ($registeredStatus == 0) {
-                    // Update the registered status in the database using prepared statement
-                    $updateQuery = "UPDATE $tableName SET registered = 1 WHERE user_id = ?";
-                    $stmt = mysqli_prepare($conn, $updateQuery);
-                    mysqli_stmt_bind_param($stmt, 'i', $userId);
-
-                    if (mysqli_stmt_execute($stmt)) {
-                        echo 'User with ID ' . $userId . ' has been accepted.';
-                    } else {
-                        echo 'Error updating the database: ' . mysqli_error($conn);
+                // Validate access level
+                if (in_array($accessLevel, $validAccessLevels)) {
+                    switch ($accessLevel) {
+                        case 1:
+                            $tableName = 'tbl_housekeeper';
+                            break;
+                        case 2:
+                            $tableName = 'tbl_bookkeeper';
+                            break;
+                        case 3:
+                            $tableName = 'tbl_director';
+                            break;
                     }
 
-                    mysqli_stmt_close($stmt);
+                    $checkQuery = "SELECT registered FROM $tableName WHERE user_id = ?";
+                    $stmtCheck = mysqli_prepare($conn, $checkQuery);
+                    mysqli_stmt_bind_param($stmtCheck, 'i', $userId);
+                    mysqli_stmt_execute($stmtCheck);
+                    mysqli_stmt_bind_result($stmtCheck, $registeredStatus);
+                    mysqli_stmt_fetch($stmtCheck);
+                    mysqli_stmt_close($stmtCheck);
+
+                    if ($registeredStatus == 0) {
+                        // Update the registered status in the database using prepared statement
+                        $updateQuery = "UPDATE $tableName SET registered = 1 WHERE user_id = ?";
+                        $stmt = mysqli_prepare($conn, $updateQuery);
+                        mysqli_stmt_bind_param($stmt, 'i', $userId);
+
+                        if (mysqli_stmt_execute($stmt)) {
+                            echo 'User with ID ' . $userId . ' has been accepted.';
+                        } else {
+                            echo 'Error updating the database: ' . mysqli_error($conn);
+                        }
+
+                        mysqli_stmt_close($stmt);
+                    } else {
+                        echo 'User with ID ' . $userId . ' is already registered.';
+                    }
                 } else {
-                    echo 'User with ID ' . $userId . ' is already registered.';
+                    echo 'Invalid access level.';
                 }
-            } else {
-                echo 'Invalid access level.';
+            }
+
+            // Check if the delete button is clicked
+            if (isset($_POST['delete_user'])) {
+                $userIdToDelete = $_POST['user_id'];
+
+                // Specify the table name based on the access level
+                $tableNameToDelete = '';
+                $accessLevelToDelete = $_POST['access_level'];
+
+                switch ($accessLevelToDelete) {
+                    case 1:
+                        $tableNameToDelete = 'tbl_housekeeper';
+                        break;
+                    case 2:
+                        $tableNameToDelete = 'tbl_bookkeeper';
+                        break;
+                    case 3:
+                        $tableNameToDelete = 'tbl_director';
+                        break;
+                }
+
+                // Delete the user from the database using prepared statement
+                $deleteQuery = "DELETE FROM $tableNameToDelete WHERE user_id = ?";
+                $stmtDelete = mysqli_prepare($conn, $deleteQuery);
+                mysqli_stmt_bind_param($stmtDelete, 'i', $userIdToDelete);
+
+                if (mysqli_stmt_execute($stmtDelete)) {
+                    echo 'User with ID ' . $userIdToDelete . ' has been deleted.';
+                } else {
+                    echo 'Error deleting the user: ' . mysqli_error($conn);
+                }
+
+                mysqli_stmt_close($stmtDelete);
             }
         }
 
-        // Check if the delete button is clicked
-        if (isset($_POST['delete_user'])) {
-            $userIdToDelete = $_POST['user_id'];
-
-            // Specify the table name based on the access level
-            $tableNameToDelete = '';
-            $accessLevelToDelete = $_POST['access_level'];
-
-            switch ($accessLevelToDelete) {
-                case 1:
-                    $tableNameToDelete = 'tbl_housekeeper';
-                    break;
-                case 2:
-                    $tableNameToDelete = 'tbl_bookkeeper';
-                    break;
-                case 3:
-                    $tableNameToDelete = 'tbl_director';
-                    break;
-            }
-
-            // Delete the user from the database using prepared statement
-            $deleteQuery = "DELETE FROM $tableNameToDelete WHERE user_id = ?";
-            $stmtDelete = mysqli_prepare($conn, $deleteQuery);
-            mysqli_stmt_bind_param($stmtDelete, 'i', $userIdToDelete);
-
-            if (mysqli_stmt_execute($stmtDelete)) {
-                echo 'User with ID ' . $userIdToDelete . ' has been deleted.';
-            } else {
-                echo 'Error deleting the user: ' . mysqli_error($conn);
-            }
-
-            mysqli_stmt_close($stmtDelete);
-        }
-    }
-
-    // Fetch staff details from the database
-    $query = "SELECT * FROM tbl_director
+        // Fetch staff details from the database
+        $query = "SELECT * FROM tbl_director
           UNION
           SELECT * FROM tbl_bookkeeper
           UNION
           SELECT * FROM tbl_housekeeper";
-    $result = mysqli_query($conn, $query);
+        $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        echo '<table border="1">
+        if ($result) {
+            echo '<table border="1">
             <tr>
                 <th>User ID</th>
                 <th>Username</th>
@@ -148,8 +153,8 @@
                 <th>Action</th>
             </tr>';
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<tr>
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<tr>
                 <td>' . $row['user_id'] . '</td>
                 <td>' . $row['username'] . '</td>
                 <td>' . $row['password'] . '</td>
@@ -180,18 +185,18 @@
                     </form>
                 </td>
             </tr>';
+            }
+
+            echo '</table>';
+        } else {
+            echo 'Error fetching data from the database: ' . mysqli_error($conn);
         }
 
-        echo '</table>';
-    } else {
-        echo 'Error fetching data from the database: ' . mysqli_error($conn);
-    }
-
-    // Close the database connection
-    mysqli_close($conn);
-    ?>
+        // Close the database connection
+        mysqli_close($conn);
+        ?>
     </main>
-    <main>
+
 </body>
 
 </html>

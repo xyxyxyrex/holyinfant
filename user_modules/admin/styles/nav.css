@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif; /* Specify a fallback font */
+}
+
+.navbar {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 5vw;
+  background: radial-gradient(
+    circle at center,
+    rgb(239, 249, 249) 0%,
+    rgb(182, 199, 226) 100.2%
+  );
+  position: fixed;
+  transition: 0.8s ease;
+}
+
+.navbar:hover {
+  width: 16vw;
+}
+
+.navbar a {
+  width: 5vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+.navbar:hover a {
+  width: 15vw;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+}
+
+.nav-item {
+  display: flex;
+}
+
+.nav-item a:visited {
+  color: black;
+}
+
+.nav-item a:active {
+  color: black;
+}
+.nav-item:hover {
+  background: white;
+}
+
+.nav-label {
+  margin-left: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar:hover .nav-label {
+  opacity: 1;
+}
+
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.fas {
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: black;
+}
+
+.main {
+  margin-left: 5vw;
+}
+
+.navlogo {
+  width: 5vw;
+}
