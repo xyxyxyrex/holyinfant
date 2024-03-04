@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.overview-wrapper {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.header h1 {
+  margin: 0;
+  margin-top: 5%;
+}
+
+.header-icons {
+  margin-top: 5%;
+  font-size: 2rem;
+  transition: 0.2s;
+}
+.header-icons .fa-solid:hover {
+  color: rgb(85, 138, 223);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.div-1 {
+  width: 45%;
+  height: 40vh;
+  background-color: white;
+  border-radius: 40px;
+  padding: 1.5%;
+  box-shadow: 1px 9px 25px -18px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 9px 25px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 9px 25px -18px rgba(0, 0, 0, 0.75);
+}
+
+.div-1-header {
+  width: 90%;
+  margin: auto;
+}
+
+.recent-header {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.recent-subheader {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+.div-2 {
+  width: 45%;
+  height: 40vh;
+  background-color: white;
+  border-radius: 40px;
+  padding: 1.5%;
+  box-shadow: 1px 9px 25px -18px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 9px 25px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 9px 25px -18px rgba(0, 0, 0, 0.75);
+}
+
+hr {
+  width: 90%;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recent-table-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.recent-table {
+}
+
+th {
+  width: 120px;
+  padding: 2.5%;
+}
+
+#chartContainer {
+  height: 90%;
+  width: 100%;
+}
