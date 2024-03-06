@@ -16,7 +16,11 @@ body {
     rgb(182, 199, 226) 100.2%
   );
   position: fixed;
-  transition: 0.8s ease;
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 .navbar:hover {
@@ -24,38 +28,29 @@ body {
 }
 
 .navbar a {
-  width: 5vw;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-}
-.navbar:hover a {
-  width: 15vw;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-}
-
-.nav-item {
   display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.nav-item a:visited {
-  color: black;
+.navbar a:hover {
+  background-color: white;
 }
 
-.nav-item a:active {
-  color: black;
-}
-.nav-item:hover {
-  background: white;
+.fas {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  margin-right: 1rem;
 }
 
 .nav-label {
-  margin-left: 15px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .navbar:hover .nav-label {
@@ -69,16 +64,14 @@ body {
   width: 100%;
 }
 
-.fas {
-  font-size: 1.5rem;
-  padding: 1rem;
-  color: black;
-}
-
 .main {
   margin-left: 5vw;
 }
 
 .navlogo {
   width: 5vw;
+}
+
+#logout {
+  bottom: 0;
 }

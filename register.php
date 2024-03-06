@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
     <meta charset="utf-8">
     <title>Create an Account</title>
     <link rel="stylesheet" href="styles/register.css">

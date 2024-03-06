@@ -67,34 +67,71 @@ $dataPoints = array(
                         <hr>
                         <div class="recent-table-wrapper">
                             <table class="recent-table">
-                                <tr>
-                                    <th>Header 1</th>
-                                    <th>Header 2</th>
-                                    <th>Header 3</th>
-                                    <th>Header 4</th>
-                                </tr>
-                                <tr>
-                                    <th>Content 1</th>
-                                    <th>Content 2</th>
-                                    <th>Content 3</th>
-                                    <th>Content 4</th>
-                                </tr>
-                                <tr>
-                                    <th>Content 1</th>
-                                    <th>Content 2</th>
-                                    <th>Content 3</th>
-                                    <th>Content 4</th>
-                                </tr>
-                                <tr>
-                                    <th>Content 1</th>
-                                    <th>Content 2</th>
-                                    <th>Content 3</th>
-                                    <th>Content 4</th>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th><i class="fa-solid fa-user"></i></th>
+                                        <th>Name</th>
+                                        <th>Activity</th>
+                                        <th>Date Performed</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
+                                        <td>Name</td>
+                                        <td>Admission</td>
+                                        <td>March 3, 2024</td>
+                                        <td>Done</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
+                                        <td>Name</td>
+                                        <td>Admission</td>
+                                        <td>March 3, 2024</td>
+                                        <td>Done</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
+                                        <td>Name</td>
+                                        <td>Admission</td>
+                                        <td>March 3, 2024</td>
+                                        <td>Done</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
+                                        <td>Name</td>
+                                        <td>Admission</td>
+                                        <td>March 3, 2024</td>
+                                        <td>Done</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
+                                        <td>Name</td>
+                                        <td>Admission</td>
+                                        <td>March 3, 2024</td>
+                                        <td>Done</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
+                                        <td>Name</td>
+                                        <td>Admission</td>
+                                        <td>March 3, 2024</td>
+                                        <td>Done</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class=" div-2">
+                    <div class="div-2">
+                        <div class="employee-day-container">
+                            <p id="employee-day-header">Today's Shift</p>
+                            <img class="employee-day-image" src="assets/employee_image/sample.jpg" alt="Employee of the Day">
+                            <div class="employee-day-name">
+                                <span id="employee-day-name">Gerard Ethan Francis Rivera</span>
+                                <span id="employee-day-position">Housekeeper</span>
+                            </div>
+                        </div>
                         <div id="chartContainer"></div>
                         <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
                     </div>
