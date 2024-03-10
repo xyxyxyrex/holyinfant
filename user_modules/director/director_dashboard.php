@@ -1,3 +1,4 @@
+<?php include 'director_sidebar.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 

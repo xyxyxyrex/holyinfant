@@ -614,3 +614,300 @@ string(282) "Array
 File uploaded successfully.
 string(27) "File uploaded successfully."
 
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Houseekeeper
+    [lastname] => Keeper
+    [user_role] => housekeeper
+    [email] => email2@gmail.com
+    [address] => add1
+    [contact_number] => 202020
+    [birthdate] => 2222-02-22
+    [gender] => Male
+    [username] => hk1
+    [password] => hk1
+)
+
+string(278) "Array
+(
+    [firstname] => Houseekeeper
+    [lastname] => Keeper
+    [user_role] => housekeeper
+    [email] => email2@gmail.com
+    [address] => add1
+    [contact_number] => 202020
+    [birthdate] => 2222-02-22
+    [gender] => Male
+    [username] => hk1
+    [password] => hk1
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php746D.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+
+string(303) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php746D.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php74BC.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+
+string(303) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php74BC.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Bk1
+    [lastname] => Bk2
+    [user_role] => bookkeeper
+    [email] => bk@gmail.com
+    [address] => bk1
+    [contact_number] => 22211
+    [birthdate] => 2985-09-09
+    [gender] => Male
+    [username] => bk1
+    [password] => bk1
+)
+
+string(259) "Array
+(
+    [firstname] => Bk1
+    [lastname] => Bk2
+    [user_role] => bookkeeper
+    [email] => bk@gmail.com
+    [address] => bk1
+    [contact_number] => 22211
+    [birthdate] => 2985-09-09
+    [gender] => Male
+    [username] => bk1
+    [password] => bk1
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => seamless-paper-texture-business-card-background-thumb47.jpg
+            [full_path] => seamless-paper-texture-business-card-background-thumb47.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpF379.tmp
+            [error] => 0
+            [size] => 608331
+        )
+
+)
+
+string(369) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => seamless-paper-texture-business-card-background-thumb47.jpg
+            [full_path] => seamless-paper-texture-business-card-background-thumb47.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpF379.tmp
+            [error] => 0
+            [size] => 608331
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => bk1
+    [lastname] => bk1
+    [user_role] => bookkeeper
+    [email] => bk1
+    [address] => bk1
+    [contact_number] => 111
+    [birthdate] => 1111-11-11
+    [gender] => Female
+    [username] => bk1
+    [password] => bk1
+)
+
+string(250) "Array
+(
+    [firstname] => bk1
+    [lastname] => bk1
+    [user_role] => bookkeeper
+    [email] => bk1
+    [address] => bk1
+    [contact_number] => 111
+    [birthdate] => 1111-11-11
+    [gender] => Female
+    [username] => bk1
+    [password] => bk1
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php25FF.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+
+string(303) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php25FF.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => bk1
+    [lastname] => bk1
+    [user_role] => bookkeeper
+    [email] => bk1
+    [address] => bk1
+    [contact_number] => 111
+    [birthdate] => 1111-11-11
+    [gender] => Female
+    [username] => bk1
+    [password] => bk1
+)
+
+string(250) "Array
+(
+    [firstname] => bk1
+    [lastname] => bk1
+    [user_role] => bookkeeper
+    [email] => bk1
+    [address] => bk1
+    [contact_number] => 111
+    [birthdate] => 1111-11-11
+    [gender] => Female
+    [username] => bk1
+    [password] => bk1
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php261F.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+
+string(303) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => womens empowerment (1).png
+            [full_path] => womens empowerment (1).png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php261F.tmp
+            [error] => 0
+            [size] => 4862016
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+

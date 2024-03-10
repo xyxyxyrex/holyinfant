@@ -1,3 +1,4 @@
+<?php include 'housekeeper_sidebar.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
