@@ -4,6 +4,7 @@ include '../../dbconn.php' ?>
 <html lang="en">
 
 <head>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/adminchildren.css">
     <meta charset="UTF-8">
@@ -17,20 +18,19 @@ include '../../dbconn.php' ?>
             <div class="top-header">
                 <div class="header-title">
                     <h1 class="children-title">Children</h1>
-                    <button id="addChildBtn">Add Child</button>
                 </div>
             </div>
             <hr>
 
             <div class="container">
                 <div class="view-toggle">
-                    <button id="listView" class="active">List View</button>
-                    <button id="cardView">Card View</button>
+                    <button id="addChildBtn">+ | Add Child</button>
+                    <button id="listView" class="active"><i class="fas fa-th-list"></i></button>
+                    <button id="cardView"><i class="fas fa-th-large"></i></button>
                 </div>
                 <div class="item-container">
                     <?php
-                    // Fetch data from the database (replace 'your_query_here' with your actual query)
-                    $sql = "SELECT profile_image, firstname, lastname, child_id FROM tbl_children";
+                    $sql = "SELECT profile_image, firstname, lastname, child_id, child_description FROM tbl_children";
                     $result = $conn->query($sql);
 
                     if ($result && $result->num_rows > 0) {
@@ -39,14 +39,13 @@ include '../../dbconn.php' ?>
                             $firstName = $row['firstname'];
                             $lastName = $row['lastname'];
                             $childId = $row['child_id'];
+                            $childDescription = $row['child_description'];
 
-                            // Display the fetched data for each child
                             echo "<div class='item'>";
                             echo "<img src='$profileImage' alt='Profile Picture' style='object-fit: cover; border-radius: 100px; width: 100px; height: 100px;'>";
                             echo "<h3>$firstName $lastName</h3>";
-                            echo "<p>Description for $firstName $lastName</p>";
+                            echo "<p>$childDescription</p>";
 
-                            // Add a "View Child" button
                             echo "<a href='admin_view_child.php?id=$childId' class='cssbuttons-io-button'>
                             View
                             <div class='icon'>
@@ -71,7 +70,6 @@ include '../../dbconn.php' ?>
                         echo "<p>No child data available</p>";
                     }
 
-                    // Close the result set
                     $result->close();
                     ?>
                 </div>
@@ -185,7 +183,6 @@ include '../../dbconn.php' ?>
             itemContainer.classList.add('card-view');
         }
 
-        // Set the initial view
         showListView();
     </script>
 </body>

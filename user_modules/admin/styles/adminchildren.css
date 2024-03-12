@@ -10,7 +10,7 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -25,12 +25,15 @@
   padding: 8px 16px;
   margin-left: 10px;
   border: none;
-  background-color: #f0f0f0;
   cursor: pointer;
 }
 
+.view-toggle button:hover {
+  background-color: rgb(182, 199, 226);
+}
+
 .view-toggle button.active {
-  background-color: #4caf50;
+  background-color: rgb(89, 108, 138);
   color: white;
 }
 
@@ -44,11 +47,28 @@
   padding: 20px;
   background-color: #f0f0f0;
   margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .card-view .item {
-  width: calc(33.33% - 20px);
+  width: calc(22.22% - 20px);
   margin-right: 20px;
+}
+
+#addChildBtn {
+  background: rgb(182, 199, 226);
+  border-radius: 50px;
+  font-family: Inter;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+#addChildBtn:hover {
+  background: rgb(105, 135, 182);
+  transition: 0.3s;
 }
 
 .modal {
@@ -100,7 +120,7 @@
 }
 
 .modal-content h2 {
-  color: #5a3fd7;
+  color: #000;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -145,7 +165,7 @@
 }
 
 .modal-content button[type="submit"] {
-  background-color: #5a3fd7;
+  background-color: #000;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -159,8 +179,12 @@
 }
 
 .cssbuttons-io-button {
-  background: #a370f0;
-  color: white;
+  background: radial-gradient(
+    circle at center,
+    rgb(239, 249, 249) 0%,
+    rgb(182, 199, 226) 100.2%
+  );
+  color: black;
   font-family: inherit;
   padding: 0.35em;
   padding-left: 1.2em;
@@ -171,13 +195,13 @@
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  box-shadow: inset 0 0 1.6em -0.6em rgb(182, 199, 226);
   overflow: hidden;
   position: relative;
   height: 2.8em;
-  padding-right: 3.3em;
+  margin: auto;
   cursor: pointer;
-  width: 25%;
+  width: 80%;
 }
 
 .cssbuttons-io-button .icon {
@@ -190,7 +214,7 @@
   height: 2.2em;
   width: 2.2em;
   border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em rgb(93, 118, 158);
   right: 0.3em;
   transition: all 0.3s;
 }

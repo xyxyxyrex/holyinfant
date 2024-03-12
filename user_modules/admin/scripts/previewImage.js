@@ -32,5 +32,4 @@ const listViewBtn = document.getElementById('listView');
             }
         }
 
-        // Set the initial view
         showListView();
