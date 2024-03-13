@@ -112,6 +112,6 @@ if ($stmt) {
     // Handle the case where the statement preparation fails
     echo "Error: Unable to prepare SQL statement.";
 }
-
+header('Content-Type: application/json');
 // Close the database connection
 $conn->close();

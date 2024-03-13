@@ -1,13 +1,10 @@
 <?php
 include 'admin_sidebar.php';
-// Connect to the database
 include '../../dbconn.php';
 
-// Check if the child ID is provided in the URL
 if (isset($_GET['id'])) {
     $childId = $_GET['id'];
 
-    // Fetch child data from the database
     $sql = "SELECT * FROM tbl_children WHERE child_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $childId);
@@ -17,7 +14,6 @@ if (isset($_GET['id'])) {
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
-        // Display child information
         $profileImage = $row['profile_image'];
         $firstName = $row['firstname'];
         $lastName = $row['lastname'];
@@ -32,13 +28,12 @@ if (isset($_GET['id'])) {
         $parent1ContactNumber = $row['parent1_contact_number'];
         $parent2Name = $row['parent2_name'];
         $parent2ContactNumber = $row['parent2_contact_number'];
-
-        // Display child information in HTML
 ?>
         <!DOCTYPE html>
         <html lang="en">
 
         <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="styles/admin_view_child.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,40 +43,128 @@ if (isset($_GET['id'])) {
         <body>
             <main>
                 <h1>Child Information</h1>
-                <div>
-                    <?php if ($profileImage) : ?>
-                        <img src="<?php echo $profileImage; ?>" alt="Child Profile Image" style="width: 200px; height: 200px;">
-                    <?php else : ?>
-                        <p>No profile image available.</p>
-                    <?php endif; ?>
+                <div class="personal-information">
+
+                    <div>
+                        <?php if ($profileImage) : ?>
+                            <img src="<?php echo $profileImage; ?>" alt="Child Profile Image" style="width: 200px; height: 200px;">
+                        <?php else : ?>
+                            <p>No profile image available.</p>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="personal-details">
+                        <h2><?php echo ucwords($firstName . ' ' . $lastName); ?></h2>
+                        <p><strong>Birthdate:</strong> <span id="birthdate"><?php echo $birthdate; ?></span> <button onclick="openModal('birthdate')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Gender:</strong> <span id="gender"><?php echo ucwords($gender); ?></span> <button onclick="openModal('gender')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Status:</strong> <span id="status"><?php echo ucwords($status); ?></span> <button onclick="openModal('status')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Child Description:</strong> <span id="childDescription"><?php echo $childDescription; ?></span> <button onclick="openModal('childDescription')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Health Conditions:</strong> <span id="healthConditions"><?php echo $healthConditions; ?></span> <button onclick="openModal('healthConditions')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Allergies:</strong> <span id="allergies"><?php echo $allergies; ?></span> <button onclick="openModal('allergies')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Hobbies:</strong> <span id="hobbies"><?php echo $hobbies; ?></span> <button onclick="openModal('hobbies')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Parent 1 Name:</strong> <span id="parent1Name"><?php echo ucwords($parent1Name); ?></span> <button onclick="openModal('parent1Name')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Parent 1 Contact Number:</strong> <span id="parent1ContactNumber"><?php echo $parent1ContactNumber; ?></span> <button onclick="openModal('parent1ContactNumber')"><i class="fa-regular fa-pen-to-square"></i></button>
+                        </p>
+                        <p><strong>Parent 2 Name:</strong> <span id="parent2Name"><?php echo ucwords($parent2Name); ?></span> <button onclick="openModal('parent2Name')"><i class="fa-regular fa-pen-to-square"></i></button></p>
+                        <p><strong>Parent 2 Contact Number:</strong> <span id="parent2ContactNumber"><?php echo $parent2ContactNumber; ?></span> <button onclick="openModal('parent2ContactNumber')"><i class="fa-regular fa-pen-to-square"></i></button>
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h2><?php echo $firstName . ' ' . $lastName; ?></h2>
-                    <p><strong>Birthdate:</strong> <?php echo $birthdate; ?></p>
-                    <p><strong>Gender:</strong> <?php echo $gender; ?></p>
-                    <p><strong>Status:</strong> <?php echo $status; ?></p>
-                    <p><strong>Child Description:</strong> <?php echo $childDescription; ?></p>
-                    <p><strong>Health Conditions:</strong> <?php echo $healthConditions; ?></p>
-                    <p><strong>Allergies:</strong> <?php echo $allergies; ?></p>
-                    <p><strong>Hobbies:</strong> <?php echo $hobbies; ?></p>
-                    <p><strong>Parent 1 Name:</strong> <?php echo $parent1Name; ?></p>
-                    <p><strong>Parent 1 Contact Number:</strong> <?php echo $parent1ContactNumber; ?></p>
-                    <p><strong>Parent 2 Name:</strong> <?php echo $parent2Name; ?></p>
-                    <p><strong>Parent 2 Contact Number:</strong> <?php echo $parent2ContactNumber; ?></p>
+
+                <div id="editModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Edit Field</h2>
+                        <label for="editValue">New Value:</label>
+                        <input type="text" id="editValue">
+                        <button onclick="saveEdit('<?php echo $childId; ?>')">Save</button>
+                        <button onclick="closeModal()">Cancel</button>
+                    </div>
                 </div>
             </main>
-        </body>
+
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                var currentField;
+
+                function openModal(field) {
+                    currentField = field;
+                    var fieldValue = $('#' + field).text();
+                    $('#editValue').val(fieldValue);
+                    $('#editModal').show();
+                }
+
+                function saveEdit(childId) {
+                    var editedValue = $('#editValue').val();
+                    console.log("Debug: Field - " + currentField + ", Value - " + editedValue);
+                    $.ajax({
+                        type: "POST",
+                        url: "save_edit.php",
+                        data: {
+                            id: childId,
+                            field: currentField,
+                            value: editedValue
+                        },
+                        success: function(response) {
+                            if (response.trim() == "success") {
+                                $('#' + currentField).text(editedValue);
+                                closeModal();
+                            } else {
+                                alert("Failed to save edit.");
+                            }
+                        },
+                        error: function() {
+                            alert("Failed to save edit. Please try again.");
+                        }
+                    });
+                }
+
+                function closeModal() {
+                    $('#editModal').hide();
+                }
+            </script>
+        </body>$field
 
         </html>
+
 <?php
     } else {
         echo "Child not found.";
     }
 
-    // Close the database connection
     $stmt->close();
     $conn->close();
 } else {
     echo "Child ID not provided.";
 }
 ?>
+
+<?php
+include '../../dbconn.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $childId = $_POST['id'];
+    $field = $_POST['field'];
+    $value = $_POST['value'];
+
+    $updateSql = "UPDATE tbl_children SET $field = ? WHERE child_id = ?";
+    $updateStmt = $conn->prepare($updateSql);
+
+    if ($updateStmt) {
+        $updateStmt->bind_param('si', $value, $childId);
+        $result = $updateStmt->execute();
+
+        if ($result) {
+            echo "success";
+        } else {
+            echo "Failed to update database: " . $conn->error;
+        }
+
+        $updateStmt->close();
+    } else {
+        echo "Failed to prepare statement: " . $conn->error;
+    }
+
+    $conn->close();
+} else {
+    echo "";
+}

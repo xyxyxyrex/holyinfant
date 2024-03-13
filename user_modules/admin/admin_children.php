@@ -41,7 +41,8 @@ include '../../dbconn.php' ?>
                             $childId = $row['child_id'];
                             $childDescription = $row['child_description'];
 
-                            echo "<div class='item'>";
+                            echo "<div class='item' id='child_$childId'>";
+                            echo "<button class='delete-btn' onclick='deleteChild($childId)'>X</button>";
                             echo "<img src='$profileImage' alt='Profile Picture' style='object-fit: cover; border-radius: 100px; width: 100px; height: 100px;'>";
                             echo "<h3>$firstName $lastName</h3>";
                             echo "<p>$childDescription</p>";
@@ -184,6 +185,42 @@ include '../../dbconn.php' ?>
         }
 
         showListView();
+    </script>
+    <script>
+        function deleteChild(childId) {
+            if (confirm('Are you sure you want to delete this child?')) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'delete_child.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            try {
+                                const response = JSON.parse(xhr.responseText);
+                                if (response.success) {
+                                    const childElement = document.getElementById('child_' + childId);
+                                    if (childElement) {
+                                        childElement.parentNode.removeChild(childElement);
+                                        alert('Child record deleted successfully.');
+                                    } else {
+                                        console.error('Error: Child element not found for ID ' + childId);
+                                        console.log('Response:', response);
+                                        console.log('HTML:', document.body.innerHTML);
+                                    }
+                                } else {
+                                    alert('Error deleting child record.');
+                                }
+                            } catch (error) {
+                                console.error('Error parsing JSON response:', error);
+                            }
+                        } else {
+                            alert('Error deleting child record. HTTP status: ' + xhr.status);
+                        }
+                    }
+                };
+                xhr.send('childId=' + childId);
+            }
+        }
     </script>
 </body>
 
