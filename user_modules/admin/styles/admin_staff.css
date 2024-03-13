@@ -1,0 +1,82 @@
+main {
+  margin-left: 5vw;
+}
+table {
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: "Inter", sans-serif; /* Aligning font with nav.css */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: auto;
+}
+
+/* Table header */
+th {
+  background-color: rgb(
+    182,
+    199,
+    226
+  ); /* Adjusted to match nav.css gradient end */
+  color: #ffffff;
+  text-align: left;
+  padding: 12px 2px;
+}
+
+/* Table body */
+td {
+  padding: 12px 5px;
+}
+
+/* Table rows */
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Table row hover effect */
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tr:last-of-type {
+  border-bottom: 2px solid rgb(182, 199, 226); /* Adjusted to match nav.css gradient end */
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Table header and body text alignment */
+th,
+td {
+  text-align: left;
+}
+
+/* Button styling */
+button {
+  background-color: rgb(
+    182,
+    199,
+    226
+  ); /* Adjusted to match nav.css gradient end */
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(
+    106,
+    126,
+    158
+  ); /* Consider adjusting this color for better alignment */
+}

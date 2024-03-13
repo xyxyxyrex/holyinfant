@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2024 at 02:47 PM
+-- Generation Time: Mar 13, 2024 at 03:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -105,8 +105,9 @@ CREATE TABLE `tbl_children` (
 --
 
 INSERT INTO `tbl_children` (`child_id`, `firstname`, `lastname`, `birthdate`, `status`, `child_description`, `gender`, `health_conditions`, `allergies`, `hobbies`, `parent1_name`, `parent1_contact_number`, `parent2_name`, `parent2_contact_number`, `added_by_admin`, `added_by_director`, `added_by_bookkeeper`, `profile_image`) VALUES
-(6, 'Timothy', 'Ascalon', '2004-03-28', 'DepressedsHA', 'Very polited', 'AHAHAHAHs', 'Autism', 'Peoplesd', 'Gamingsda', 'Ma. Teresa Acaloasdn', '09090909s', 'Gabe Ascalons', '09090909s', 1, NULL, NULL, 'uploads/1710332760_everything is blue - goularte [sem continuação].jpg'),
-(10, 'ASDASD', 'ASDASASD', '2222-02-22', 'ASDASD', 'ASD', 'male', 'DASASDDSA', 'ASDfa', 'ADSDAS', 'ASD', '123', 'DASASD', '23', 1, NULL, NULL, NULL);
+(6, 'Timothy', 'Ascalon', '2222-02-22', 'Status', 'asd', 'asdasd', 'asd', 'Peoplesd', 'hjas', 'asdasdasd', 'agfasdfg', 'Gabe Ascalons', 'asdasd', 1, NULL, NULL, 'uploads/1710332760_everything is blue - goularte [sem continuação].jpg'),
+(10, 'ASDASD', 'ASDASASD', '2222-02-22', 'ASDASD', 'ASD', 'male', 'DASASDDSA', 'ASDfa', 'ADSDAS', 'ASD', '123', 'DASASD', '23', 1, NULL, NULL, NULL),
+(12, 'FirstName', 'LASTname', '2024-03-29', 'asda', 'asdasd', 'Alien', 'asdasd', 'asdasd', 'asdasdsa', 'asd', 'dasd', 'asdasdas', 'asdasd', 1, NULL, NULL, 'uploads/1710339761_423600177_760756055936654_4837657945687289022_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -269,7 +270,7 @@ ALTER TABLE `tbl_bookkeeper`
 -- AUTO_INCREMENT for table `tbl_children`
 --
 ALTER TABLE `tbl_children`
-  MODIFY `child_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `child_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_director`

@@ -28,6 +28,14 @@ if (isset($_GET['id'])) {
         $parent1ContactNumber = $row['parent1_contact_number'];
         $parent2Name = $row['parent2_name'];
         $parent2ContactNumber = $row['parent2_contact_number'];
+
+        // Convert and display the birthdate in "Month Name DD, YYYY" format
+        if (!empty($birthdate)) {
+            $birthdateDateTime = new DateTime($birthdate);
+            $formattedBirthdate = $birthdateDateTime->format('F d, Y'); // Format to "Month Name DD, YYYY"
+        } else {
+            $formattedBirthdate = "Not available";
+        }
 ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -89,7 +97,17 @@ if (isset($_GET['id'])) {
                 function openModal(field) {
                     currentField = field;
                     var fieldValue = $('#' + field).text();
-                    $('#editValue').val(fieldValue);
+                    var inputField = $('#editValue');
+
+                    if (field === 'birthdate') {
+                        inputField.attr('type', 'date');
+                        var formattedDate = fieldValue.split('/').reverse().join('-'); // Adjust this if your date format is different
+                        inputField.val(formattedDate);
+                    } else {
+                        inputField.attr('type', 'text');
+                        inputField.val(fieldValue);
+                    }
+
                     $('#editModal').show();
                 }
 
@@ -106,7 +124,18 @@ if (isset($_GET['id'])) {
                         },
                         success: function(response) {
                             if (response.trim() == "success") {
-                                $('#' + currentField).text(editedValue);
+                                if (currentField === 'birthdate') {
+                                    var date = new Date(editedValue);
+                                    var options = {
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric'
+                                    };
+                                    var formattedDate = date.toLocaleDateString('en-US', options);
+                                    $('#' + currentField).text(formattedDate);
+                                } else {
+                                    $('#' + currentField).text(editedValue);
+                                }
                                 closeModal();
                             } else {
                                 alert("Failed to save edit.");

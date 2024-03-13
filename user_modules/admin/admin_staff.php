@@ -6,6 +6,7 @@ include 'admin_sidebar.php';
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="styles/admin_staff.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff</title>
@@ -13,6 +14,8 @@ include 'admin_sidebar.php';
 
 <body>
     <main>
+        <span style="font-size: 2em; font-weight: bold;" ;>Staff List</span>
+        <hr>
         <?php
         // Include your database connection file
         include '../../dbconn.php';
