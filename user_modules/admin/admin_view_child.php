@@ -29,10 +29,9 @@ if (isset($_GET['id'])) {
         $parent2Name = $row['parent2_name'];
         $parent2ContactNumber = $row['parent2_contact_number'];
 
-        // Convert and display the birthdate in "Month Name DD, YYYY" format
         if (!empty($birthdate)) {
             $birthdateDateTime = new DateTime($birthdate);
-            $formattedBirthdate = $birthdateDateTime->format('F d, Y'); // Format to "Month Name DD, YYYY"
+            $formattedBirthdate = $birthdateDateTime->format('F d, Y'); 
         } else {
             $formattedBirthdate = "Not available";
         }

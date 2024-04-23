@@ -4,6 +4,10 @@ include '../../dbconn.php' ?>
 <html lang="en">
 
 <head>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/adminchildren.css">
@@ -24,6 +28,7 @@ include '../../dbconn.php' ?>
 
             <div class="container">
                 <div class="view-toggle">
+                <input type="text" id="searchInput" placeholder="Search...">
                     <button id="addChildBtn">+ | Add Child</button>
                     <button id="listView" class="active"><i class="fas fa-th-list"></i></button>
                     <button id="cardView"><i class="fas fa-th-large"></i></button>
@@ -82,7 +87,7 @@ include '../../dbconn.php' ?>
         <div class="modal-content">
             <div class="left-section">
                 <span class="close">&times;</span>
-                <img id="previewImage" src="#" alt="Selected Image" style="object-fit:cover; border-radius:100px; width: 200px; height: 200px;">
+                <img id="childPicture"  src="#" alt="Selected Image" style="object-fit:cover; border-radius:100px; width: 200px; height: 200px;">
             </div>
             <div class="right-section">
                 <form id="addChildForm">
@@ -161,9 +166,24 @@ include '../../dbconn.php' ?>
             </div>
         </div>
     </div>
-    <script src="scripts/previewImage.js">
-    </script>
+
     <script src="scripts/addChildModal.js"></script>
+    <script>
+$(document).ready(function() {
+
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val().toLowerCase(); 
+        $('.item').each(function() {
+            var childName = $(this).find('h3').text().toLowerCase();
+            if (childName.includes(searchText)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+});
+</script>
     <script>
         const listViewBtn = document.getElementById('listView');
         const cardViewBtn = document.getElementById('cardView');
@@ -223,5 +243,6 @@ include '../../dbconn.php' ?>
         }
     </script>
 </body>
-
+<script src="scripts/previewImage.js">
+    </script>
 </html>
