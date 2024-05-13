@@ -1,4 +1,6 @@
 <?php include 'admin_sidebar.php'; ?>
+<?php require '../../scripts/fpdf/fpdf.php'; ?>
+
 <?php
 
 $dataPoints = array(
@@ -46,6 +48,14 @@ $dataPoints = array(
 
 <body>
     <main>
+        <?php
+        $pdf = new FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',16);
+        $pdf->Cell(40,10,'Hello World!');
+        $pdf->Output();
+        ?>
+        
         <div class="main-wrapper">
             <div class="header">
                 <h1>Dashboard</h1>

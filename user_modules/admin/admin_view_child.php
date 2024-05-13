@@ -62,6 +62,7 @@ if (isset($_GET['id'])) {
 
                     <div class="personal-details">
                         <h2><?php echo ucwords($firstName . ' ' . $lastName); ?></h2>
+                        <button onclick="downloadPDF(<?php echo $childId; ?>)">Download PDF</button>
                         <p><strong>Birthdate:</strong> <span id="birthdate"><?php echo $birthdate; ?></span> <button onclick="openModal('birthdate')"><i class="fa-regular fa-pen-to-square"></i></button></p>
                         <p><strong>Gender:</strong> <span id="gender"><?php echo ucwords($gender); ?></span> <button onclick="openModal('gender')"><i class="fa-regular fa-pen-to-square"></i></button></p>
                         <p><strong>Status:</strong> <span id="status"><?php echo ucwords($status); ?></span> <button onclick="openModal('status')"><i class="fa-regular fa-pen-to-square"></i></button></p>
@@ -88,6 +89,11 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
             </main>
+            <script>
+    function downloadPDF(childId) {
+        window.location.href = 'download_child.php?id=' + childId;
+    }
+</script>
 
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script>
