@@ -1,4 +1,5 @@
 <?php include 'admin_sidebar.php'; ?>
+<?php include '../../dbconn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 

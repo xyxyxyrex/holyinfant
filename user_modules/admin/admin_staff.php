@@ -1,6 +1,5 @@
 <?php
 include 'admin_sidebar.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +18,6 @@ include 'admin_sidebar.php';
         <?php
         // Include your database connection file
         include '../../dbconn.php';
-
 
         // Start session
         session_start();
@@ -128,11 +126,12 @@ include 'admin_sidebar.php';
         }
 
         // Fetch staff details from the database
-        $query = "SELECT * FROM tbl_director
-          UNION
-          SELECT * FROM tbl_bookkeeper
-          UNION
-          SELECT * FROM tbl_housekeeper";
+        $query = "SELECT user_id, username, password, firstname, lastname, birthdate, email, contact_number, address, access_level, profile_picture, date_created, registered, gender, schedule_id FROM tbl_housekeeper
+            UNION
+            SELECT user_id, username, password, firstname, lastname, birthdate, email, contact_number, address, access_level, profile_picture, date_created, registered, gender, NULL AS schedule_id FROM tbl_bookkeeper
+            UNION
+            SELECT user_id, username, password, firstname, lastname, birthdate, email, contact_number, address, access_level, profile_picture, date_created, registered, gender, NULL AS schedule_id FROM tbl_director";
+
         $result = mysqli_query($conn, $query);
 
         if ($result) {
@@ -154,52 +153,87 @@ include 'admin_sidebar.php';
                 <th>Gender</th>
                 <th>Register?</th>
                 <th>Action</th>
+                <th>Schedule</th>
             </tr>';
 
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>
-                <td>' . $row['user_id'] . '</td>
-                <td>' . $row['username'] . '</td>
-                <td>' . $row['password'] . '</td>
-                <td>' . $row['firstname'] . '</td>
-                <td>' . $row['lastname'] . '</td>
-                <td>' . $row['birthdate'] . '</td>
-                <td>' . $row['email'] . '</td>
-                <td>' . $row['contact_number'] . '</td>
-                <td>' . $row['address'] . '</td>
-                <td>' . getAccessLevelDescription($row['access_level']) . '</td>
-                <td>' . $row['profile_picture'] . '</td>
-                <td>' . $row['date_created'] . '</td>
-                <td>' . ($row['registered'] ? 'Yes' : 'No') . '</td>
-                <td>' . $row['gender'] . '</td>
-                <td>
-                    <form method="POST">
-                        <input type="hidden" name="user_id" value="' . $row['user_id'] . '">
-                        <input type="hidden" name="access_level" value="' . $row['access_level'] . '">
-                        <button type="submit" name="accept_user">Accept</button>
-                    </form>
-                    <button onclick="denyUser(' . $row['user_id'] . ')">Deny</button>
-                </td>
-                <td>
-                    <form method="POST" onsubmit="return confirm(\'Are you sure you want to delete this user?\');">
-                        <input type="hidden" name="user_id" value="' . $row['user_id'] . '">
-                        <input type="hidden" name="access_level" value="' . $row['access_level'] . '">
-                        <button type="submit" name="delete_user">Delete</button>
-                    </form>
-                </td>
-            </tr>';
-            }
+    <td>' . $row['user_id'] . '</td>
+    <td>' . $row['username'] . '</td>
+    <td>' . $row['password'] . '</td>
+    <td>' . $row['firstname'] . '</td>
+    <td>' . $row['lastname'] . '</td>
+    <td>' . $row['birthdate'] . '</td>
+    <td>' . $row['email'] . '</td>
+    <td>' . $row['contact_number'] . '</td>
+    <td>' . $row['address'] . '</td>
+    <td>' . getAccessLevelDescription($row['access_level']) . '</td>
+    <td>' . $row['profile_picture'] . '</td>
+    <td>' . $row['date_created'] . '</td>
+    <td>' . ($row['registered'] ? 'Yes' : 'No') . '</td>
+    <td>' . $row['gender'] . '</td>
+    <td>
+        <form method="POST">
+            <input type="hidden" name="user_id" value="' . $row['user_id'] . '">
+            <input type="hidden" name="access_level" value="' . $row['access_level'] . '">
+            <button type="submit" name="accept_user">Accept</button>
+        </form>
+        <button onclick="denyUser(' . $row['user_id'] . ')">Deny</button>
+    </td>
+    <td>
+        <form method="POST" onsubmit="return confirm(\'Are you sure you want to delete this user?\');">
+            <input type="hidden" name="user_id" value="' . $row['user_id'] . '">
+            <input type="hidden" name="access_level" value="' . $row['access_level'] . '">
+            <button type="submit" name="delete_user">Delete</button>
+        </form>
+    </td>
+    <td>';
+    if ($row['access_level'] == 1) {
+        echo '<form method="POST">';
+        echo '<input type="hidden" name="user_id" value="' . $row['user_id'] . '">';
+        echo '<select name="schedule_id">';
+        echo '<option value="">Select Schedule</option>';
 
-            echo '</table>';
+        $schedule_query = "SELECT * FROM tbl_hk_schedule";
+        $schedule_result = mysqli_query($conn, $schedule_query);
+        if ($schedule_result) {
+            while ($schedule_row = mysqli_fetch_assoc($schedule_result)) {
+                echo '<option value="' . $schedule_row['schedule_id'] . '">' . $schedule_row['day'] . '</option>';
+            }
         } else {
-            echo 'Error fetching data from the database: ' . mysqli_error($conn);
+            echo '<option value="">Error fetching schedules</option>';
         }
 
-        // Close the database connection
-        mysqli_close($conn);
-        ?>
-    </main>
+        echo '</select>';
+        echo '<button type="submit" name="assign_schedule">Assign</button>';
+        echo '</form>';
 
-</body>
+        // Process form submission
+        if (isset($_POST['assign_schedule'])) {
+            $user_id = $_POST['user_id'];
+            $schedule_id = $_POST['schedule_id'];
 
-</html>
+            // Update schedule_id in tbl_housekeeper
+            $update_query = "UPDATE tbl_housekeeper SET schedule_id = $schedule_id WHERE user_id = $user_id";
+            $update_result = mysqli_query($conn, $update_query);
+
+            if ($update_result) {
+                echo "Schedule assigned successfully!";
+            } else {
+                echo "Error assigning schedule: " . mysqli_error($conn);
+            }
+        }
+    } else {
+        echo 'N/A';
+    }
+echo '</td>
+</tr>';
+                        }        echo '</table>';
+    } else {
+        echo 'Error fetching data from the database: ' . mysqli_error($conn);
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+    ?>
+</main>

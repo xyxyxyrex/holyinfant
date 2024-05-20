@@ -911,3 +911,195 @@ string(303) "Array
 File uploaded successfully.
 string(27) "File uploaded successfully."
 
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => Zandrix Jan
+    [lastname] => Pongos
+    [user_role] => housekeeper
+    [email] => zandrix@gmail.com
+    [address] => zandrix
+    [contact_number] => 0969420321
+    [birthdate] => 1111-04-01
+    [gender] => Other
+    [username] => zandrix123
+    [password] => 123
+)
+
+string(293) "Array
+(
+    [firstname] => Zandrix Jan
+    [lastname] => Pongos
+    [user_role] => housekeeper
+    [email] => zandrix@gmail.com
+    [address] => zandrix
+    [contact_number] => 0969420321
+    [birthdate] => 1111-04-01
+    [gender] => Other
+    [username] => zandrix123
+    [password] => 123
+)
+"
+
+Array
+(
+    [firstname] => Zandrix Jan
+    [lastname] => Pongos
+    [user_role] => housekeeper
+    [email] => zandrix@gmail.com
+    [address] => zandrix
+    [contact_number] => 0969420321
+    [birthdate] => 1111-04-01
+    [gender] => Other
+    [username] => zandrix123
+    [password] => 123
+)
+
+string(293) "Array
+(
+    [firstname] => Zandrix Jan
+    [lastname] => Pongos
+    [user_role] => housekeeper
+    [email] => zandrix@gmail.com
+    [address] => zandrix
+    [contact_number] => 0969420321
+    [birthdate] => 1111-04-01
+    [gender] => Other
+    [username] => zandrix123
+    [password] => 123
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 339KwY3.jpeg
+            [full_path] => 339KwY3.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2037.tmp
+            [error] => 0
+            [size] => 307811
+        )
+
+)
+
+string(275) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 339KwY3.jpeg
+            [full_path] => 339KwY3.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2037.tmp
+            [error] => 0
+            [size] => 307811
+        )
+
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 339KwY3.jpeg
+            [full_path] => 339KwY3.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2036.tmp
+            [error] => 0
+            [size] => 307811
+        )
+
+)
+
+string(275) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => 339KwY3.jpeg
+            [full_path] => 339KwY3.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2036.tmp
+            [error] => 0
+            [size] => 307811
+        )
+
+)
+"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+User registered successfully
+string(28) "User registered successfully"
+
+File uploaded successfully.
+string(27) "File uploaded successfully."
+
+Received a POST request with the following data:
+string(48) "Received a POST request with the following data:"
+
+Array
+(
+    [firstname] => asdas
+    [lastname] => dasda
+    [user_role] => housekeeper
+    [email] => asdasd
+    [address] => asd
+    [contact_number] => 
+    [birthdate] => 0112-12-12
+    [gender] => Male
+    [username] => dada
+    [password] => dada
+)
+
+string(255) "Array
+(
+    [firstname] => asdas
+    [lastname] => dasda
+    [user_role] => housekeeper
+    [email] => asdasd
+    [address] => asd
+    [contact_number] => 
+    [birthdate] => 0112-12-12
+    [gender] => Male
+    [username] => dada
+    [password] => dada
+)
+"
+
+Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Kimi no Na wa.jfif
+            [full_path] => Kimi no Na wa.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php3B8B.tmp
+            [error] => 0
+            [size] => 55338
+        )
+
+)
+
+string(286) "Array
+(
+    [profile_picture] => Array
+        (
+            [name] => Kimi no Na wa.jfif
+            [full_path] => Kimi no Na wa.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php3B8B.tmp
+            [error] => 0
+            [size] => 55338
+        )
+
+)
+"
+
+Invalid file type. Allowed types are jpg, jpeg, png, gif.
+string(57) "Invalid file type. Allowed types are jpg, jpeg, png, gif."
+

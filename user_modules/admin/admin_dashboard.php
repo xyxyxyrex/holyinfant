@@ -1,5 +1,5 @@
 <?php include 'admin_sidebar.php'; ?>
-<?php require '../../scripts/fpdf/fpdf.php'; ?>
+<?php include '../../dbconn.php'; ?>
 
 <?php
 
@@ -24,7 +24,6 @@ $dataPoints = array(
     <script>
         window.onload = function() {
 
-
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
                 title: {
@@ -48,14 +47,7 @@ $dataPoints = array(
 
 <body>
     <main>
-        <?php
-        $pdf = new FPDF();
-        $pdf->AddPage();
-        $pdf->SetFont('Arial','B',16);
-        $pdf->Cell(40,10,'Hello World!');
-        $pdf->Output();
-        ?>
-        
+
         <div class="main-wrapper">
             <div class="header">
                 <h1>Dashboard</h1>
@@ -94,62 +86,77 @@ $dataPoints = array(
                                         <td>March 3, 2024</td>
                                         <td>Done</td>
                                     </tr>
-                                    <tr>
-                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
-                                        <td>Name</td>
-                                        <td>Admission</td>
-                                        <td>March 3, 2024</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
-                                        <td>Name</td>
-                                        <td>Admission</td>
-                                        <td>March 3, 2024</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
-                                        <td>Name</td>
-                                        <td>Admission</td>
-                                        <td>March 3, 2024</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
-                                        <td>Name</td>
-                                        <td>Admission</td>
-                                        <td>March 3, 2024</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="placeholder.jpg" alt="Employee Picture"></td>
-                                        <td>Name</td>
-                                        <td>Admission</td>
-                                        <td>March 3, 2024</td>
-                                        <td>Done</td>
-                                    </tr>
+                                    <!-- Add more rows as needed -->
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div class="div-2">
-                        <div class="employee-day-container">
-                            <p id="employee-day-header">Today's Shift</p>
-                            <img class="employee-day-image" src="assets/employee_image/sample.jpg" alt="Employee of the Day">
-                            <div class="employee-day-name">
-                                <span id="employee-day-name">Gerard Ethan Francis Rivera</span>
-                                <span id="employee-day-position">Housekeeper</span>
-                            </div>
-                        </div>
-                        <div id="chartContainer"></div>
-                        <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-                    </div>
+                        <?php
+                        // Get the current day of the week (0 for Sunday, 1 for Monday, etc.)
+                        $currentDay = date("w");
+
+                        // Adjust current day to match schedule_id (1 for Sunday, 2 for Monday, etc.)
+                        $todayScheduleId = ($currentDay == 0) ? 7 : $currentDay;
+                        $tomorrowScheduleId = ($todayScheduleId % 7) + 1; // Get tomorrow's schedule id
+
+                        // Query to get the housekeeper for today
+                        $sqlToday = "SELECT * FROM tbl_housekeeper WHERE schedule_id = $todayScheduleId LIMIT 1";
+                        $resultToday = $conn->query($sqlToday);
+
+                        if ($resultToday->num_rows > 0) {
+                            $rowToday = $resultToday->fetch_assoc();
+                            $employeeNameToday = $rowToday['firstname'] . ' ' . $rowToday['lastname'];
+                            $employeePositionToday = 'Housekeeper'; // Assuming the position is always Housekeeper
+                            $employeeImageToday = $rowToday['profile_picture'];
+                            echo '
+                            <div class="employee-day-container" id="employee-day-container">
+                                <p id="employee-day-header">Today\'s Shift</p>
+                                <img class="employee-day-image" id="employee-day-image" src="assets/employee_image/' . $employeeImageToday . '" alt="Employee of the Day">
+                                <div class="employee-day-name">
+                                    <span id="employee-day-name">' . $employeeNameToday . '</span>
+                                    <span id="employee-day-position">' . $employeePositionToday . '</span>
+                                </div>
+                            </div>';
+                        } else {
+                            echo "No housekeeper scheduled for tomorrow.";
+                        }
+
+                        // Query to get the housekeeper for tomorrow
+                        $sqlTomorrow = "SELECT * FROM tbl_housekeeper WHERE schedule_id = $tomorrowScheduleId LIMIT 1";
+                        $resultTomorrow = $conn->query($sqlTomorrow);
+
+                        if ($resultTomorrow->num_rows > 0) {
+                            $rowTomorrow = $resultTomorrow->fetch_assoc();
+                            $employeeNameTomorrow = $rowTomorrow['firstname'] . ' ' . $rowTomorrow['lastname'];
+                            $employeePositionTomorrow = 'Housekeeper'; // Assuming the position is always Housekeeper
+                            $employeeImageTomorrow = $rowTomorrow['profile_picture'];
+                            echo '
+                            <div class="employee-day-container" id="employee-day-container">
+                                <p id="employee-day-header">Today\'s Shift</p>
+                                <img class="employee-day-image" id="employee-day-image" src="assets/employee_image/' . $employeeImageTomorrow . '" alt="Employee of the Day">
+                                <div class="employee-day-name">
+                                    <span id="employee-day-name">' . $employeeNameTomorrow . '</span>
+                                    <span id="employee-day-position">' . $employeePositionTomorrow . '</span>
+                                </div>
+                            </div>';
+                        } else {
+                            echo "No housekeeper scheduled for tomorrow.";
+                        }
+
+                        // Close the database connection
+                        $conn->close();
+                        ?>
+                   
+                   </div>
+                    <div id="chartContainer"></div>
+                    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
                 </div>
             </div>
-            <hr>
         </div>
-    </main>
+        <hr>
+    </div>
+</main>
 </body>
 
 </html>

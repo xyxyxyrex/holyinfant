@@ -3,8 +3,26 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <style>
+        .back-button{
+            top: 10px;
+            left: 10px;
+            font-size: 40px;
+            cursor: pointer;
+            margin-right:20px;
+        }
+        .back-button:hover{
+            transition:0.2s;
+            color:#00ccff;
+
+        }
+        a{
+            text-decoration:none;
+        }
+    </style>
     <link rel="icon" type="image/x-icon" href="assets/logo.png">
     <meta charset="utf-8">
+    <a href="index.php"><span class="back-button"> < </span></a>
     <title>Create an Account</title>
     <link rel="stylesheet" href="styles/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
